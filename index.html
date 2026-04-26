@@ -1,25 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>KILIVER Support</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KILIVER App Support</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 40px 30px;
+      border-radius: 24px;
+      max-width: 520px;
+      width: 90%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #cbd5e1;
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      font-size: 16px;
+      color: #e2e8f0;
+    }
+
+    a {
+      color: #86efac;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .button {
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 12px 18px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(255,255,255,0.08);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: rgba(255,255,255,0.18);
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 
-<body style="font-family:Arial;text-align:center;margin-top:50px">
+<body>
 
-<h1>KILIVER App</h1>
+  <div class="container">
 
-<p>Support Seite für die App.</p>
+    <div class="logo">K</div>
 
-<p>Kontakt:</p>
+    <h1>KILIVER App</h1>
 
-<p>yesilyurtselim34@gmail.com</p>
+    <p class="subtitle">
+      Offizielle Support-Seite für die KILIVER App.<br>
+      Hier findest du Hilfe, Kontaktinformationen sowie rechtliche Hinweise zur App.
+    </p>
 
-<p>© 2026 Selim Yesilyurt</p>
+    <div class="card">
+      <p class="contact">
+        Bei Fragen oder Problemen kannst du uns jederzeit kontaktieren:
+      </p>
+      <p>
+        <a href="mailto:yesilyurtselim34@gmail.com">
+          yesilyurtselim34@gmail.com
+        </a>
+      </p>
+    </div>
 
-  <p><a href="privacy-policy.html">Privacy Policy</a></p>
-<p><a href="terms-of-services.html">Terms of Service</a></p>
+    <div class="links">
+      <a class="button" href="privacy-policy.html">Privacy Policy</a>
+      <a class="button" href="terms-of-services.html">Terms of Service</a>
+    </div>
+
+    <footer>
+      © 2026 Selim Yesilyurt. All rights reserved.
+    </footer>
+
+  </div>
 
 </body>
-
-  
+</html>
