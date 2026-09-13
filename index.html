@@ -3,181 +3,860 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selim Yeşilyurt - Apps</title>
+
+<meta name="description" content="Selim Yeşilyurt — Independent app developer creating useful, simple and privacy-conscious mobile applications.">
+
+<meta name="theme-color" content="#080a0f">
+
+<title>Selim Yeşilyurt — Independent Developer</title>
 
 <style>
+
+:root{
+    --bg:#080a0f;
+    --surface:rgba(255,255,255,.045);
+    --surface-hover:rgba(255,255,255,.075);
+    --border:rgba(255,255,255,.09);
+    --text:#f5f7fb;
+    --muted:#9aa3b2;
+    --accent:#8b7cff;
+    --accent-2:#5de1c4;
+    --shadow:0 24px 70px rgba(0,0,0,.35);
+}
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#1d2333;
-color:#fff;
-padding:30px;
+    min-height:100vh;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            rgba(139,124,255,.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(93,225,196,.08),
+            transparent 28%
+        ),
+        var(--bg);
+
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
 }
 
-h1{
-text-align:center;
-margin-bottom:10px;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-p{
-text-align:center;
-color:#bbb;
-margin-bottom:30px;
+.container{
+    width:min(1080px,calc(100% - 40px));
+    margin:auto;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    padding:28px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:-.02em;
+}
+
+.nav-label{
+    color:var(--muted);
+    font-size:14px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:105px 0 90px;
+    text-align:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 13px;
+
+    border:1px solid var(--border);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.035);
+
+    color:#c5cbd6;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--accent-2);
+
+    box-shadow:
+        0 0 14px var(--accent-2);
+}
+
+.hero h1{
+    max-width:850px;
+    margin:auto;
+
+    font-size:clamp(44px,7vw,78px);
+
+    line-height:1.02;
+
+    letter-spacing:-.055em;
+
+    font-weight:800;
+}
+
+.gradient{
+    background:
+        linear-gradient(
+            100deg,
+            #fff 10%,
+            #b8b0ff 48%,
+            #75e5cf 100%
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero p{
+    max-width:620px;
+
+    margin:26px auto 0;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   APPLICATIONS
+========================= */
+
+.apps{
+    padding:20px 0 100px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+
+    margin-bottom:24px;
+}
+
+.section-heading h2{
+    font-size:25px;
+    letter-spacing:-.03em;
+}
+
+.section-heading span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
 }
 
 .card{
-background:#2b3347;
-padding:20px;
-border-radius:12px;
-margin:20px auto;
-max-width:700px;
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:300px;
+
+    padding:30px;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
 }
 
-.card h2{
-margin-bottom:10px;
+.card:hover{
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(139,124,255,.35);
+
+    background:var(--surface-hover);
 }
 
-details{
-margin-top:15px;
+.card::after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    right:-70px;
+    top:-70px;
+
+    border-radius:50%;
+
+    background:
+        rgba(139,124,255,.12);
+
+    filter:blur(35px);
+
+    pointer-events:none;
 }
 
-summary{
-cursor:pointer;
-font-weight:bold;
-font-size:18px;
-color:#8fd3ff;
+.card.halal::after{
+    background:
+        rgba(93,225,196,.12);
 }
 
-.links{
-margin-top:15px;
+.app-icon{
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:17px;
+
+    margin-bottom:24px;
+
+    font-size:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #302b55,
+            #17172a
+        );
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.25);
 }
 
-.links a{
-display:block;
-background:#3d4b69;
-color:white;
-text-decoration:none;
-padding:12px;
-border-radius:8px;
-margin:10px 0;
+.halal .app-icon{
+    background:
+        linear-gradient(
+            145deg,
+            #174c43,
+            #102b28
+        );
 }
 
-.links a:hover{
-background:#50658d;
+.card h3{
+    font-size:25px;
+
+    letter-spacing:-.035em;
+
+    margin-bottom:9px;
 }
+
+.card p{
+    color:var(--muted);
+
+    max-width:450px;
+
+    font-size:15px;
+
+    line-height:1.65;
+}
+
+.card-footer{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:28px;
+}
+
+.button{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:40px;
+
+    padding:0 15px;
+
+    border-radius:10px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.045);
+
+    color:#e9edf4;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:
+        all .2s ease;
+}
+
+.button:hover{
+    background:
+        rgba(255,255,255,.1);
+
+    border-color:
+        rgba(255,255,255,.18);
+}
+
+.button.primary{
+    background:#f4f5f8;
+
+    color:#0b0d12;
+
+    border-color:#f4f5f8;
+}
+
+.button.primary:hover{
+    background:#fff;
+
+    transform:translateY(-1px);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    padding:0 0 95px;
+}
+
+.about-box{
+    padding:38px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:24px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.about-box h2{
+    font-size:24px;
+
+    margin-bottom:12px;
+
+    letter-spacing:-.03em;
+}
+
+.about-box p{
+    max-width:760px;
+
+    color:var(--muted);
+
+    font-size:15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-margin-top:40px;
-text-align:center;
-color:#aaa;
-}
-</style>
+    border-top:
+        1px solid rgba(255,255,255,.07);
 
+    padding:28px 0 35px;
+
+    color:#737b89;
+
+    font-size:13px;
+}
+
+.footer-inner{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.footer-links{
+    display:flex;
+
+    gap:18px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .container{
+        width:min(
+            100% - 28px,
+            1080px
+        );
+    }
+
+    nav{
+        padding:22px 0;
+    }
+
+    .hero{
+        padding:75px 0 65px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                60px
+            );
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        min-height:auto;
+        padding:26px;
+    }
+
+    .section-heading span{
+        display:none;
+    }
+
+    .about-box{
+        padding:28px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+}
+
+</style>
 </head>
+
+
 <body>
 
-<h1>Selim Yeşilyurt</h1>
 
-<p>Select an application.</p>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
+<nav>
 
-<!-- KILIVER -->
+<div class="container nav-inner">
 
-<div class="card">
+    <div class="brand">
+        Selim Yeşilyurt
+    </div>
 
-<h2>🕌 KILIVER</h2>
-
-<p style="text-align:left;">
-Prayer Times, Qibla Finder and Islamic Tools.
-</p>
-
-<details>
-
-<summary>Open Support</summary>
-
-<div class="links">
-
-<a href="privacy-policy.html">🔒 Privacy Policy</a>
-
-<a href="terms-of-services.html">📄 Terms of Service</a>
-
-<a href="mailto:yesilyurtselim34@gmail.com">📧 Contact Support</a>
+    <div class="nav-label">
+        Independent Developer
+    </div>
 
 </div>
 
-</details>
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="container">
+
+    <div class="badge">
+
+        <span class="badge-dot"></span>
+
+        Building useful mobile experiences
+
+    </div>
+
+
+    <h1>
+
+        Simple apps.<br>
+
+        <span class="gradient">
+            Thoughtfully built.
+        </span>
+
+    </h1>
+
+
+    <p>
+
+        I create focused mobile applications designed
+        to be practical, accessible and easy to use.
+
+    </p>
 
 </div>
 
+</section>
 
-<!-- WORD LEARNING -->
 
-<div class="card">
 
-<h2>📚 Word Learning</h2>
+<!-- =========================
+     APPLICATIONS
+========================= -->
 
-<p style="text-align:left;">
-Learn English Vocabulary Easily.
-</p>
+<section class="apps">
 
-<details>
+<div class="container">
 
-<summary>Open Support</summary>
 
-<div class="links">
+    <div class="section-heading">
 
-<a href="word-privacy.html">🔒 Privacy Policy</a>
+        <h2>
+            Applications
+        </h2>
 
-<a href="word-terms.html">📄 Terms of Service</a>
+        <span>
+            Selected projects
+        </span>
 
-<a href="mailto:yesilyurtselim34@gmail.com">📧 Contact Support</a>
+    </div>
+
+
+
+    <div class="grid">
+
+
+        <!-- KILIVER -->
+
+        <article class="card">
+
+            <div class="app-icon">
+                ☪
+            </div>
+
+
+            <h3>
+                KILIVER
+            </h3>
+
+
+            <p>
+
+                Prayer times, Qibla Finder and practical
+                Islamic tools designed for everyday use.
+
+            </p>
+
+
+            <div class="card-footer">
+
+                <a
+                    class="button primary"
+                    href="privacy-policy.html"
+                >
+                    Privacy Policy
+                </a>
+
+
+                <a
+                    class="button"
+                    href="terms-of-services.html"
+                >
+                    Terms of Service
+                </a>
+
+
+                <a
+                    class="button"
+                    href="mailto:yesilyurtselim34@gmail.com"
+                >
+                    Support
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DEUTSCHE WÖRTER -->
+
+        <article class="card">
+
+            <div class="app-icon">
+                Aa
+            </div>
+
+
+            <h3>
+                Deutsche Wörter
+            </h3>
+
+
+            <p>
+
+                Learn German vocabulary with a simple,
+                focused experience designed to help you
+                build your German word knowledge step by step.
+
+            </p>
+
+
+            <div class="card-footer">
+
+                <a
+                    class="button primary"
+                    href="word-privacy.html"
+                >
+                    Privacy Policy
+                </a>
+
+
+                <a
+                    class="button"
+                    href="word-terms.html"
+                >
+                    Terms of Service
+                </a>
+
+
+                <a
+                    class="button"
+                    href="mailto:yesilyurtselim34@gmail.com"
+                >
+                    Support
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HALAL -->
+
+        <article class="card halal">
+
+            <div class="app-icon">
+                ✓
+            </div>
+
+
+            <h3>
+                Halal
+            </h3>
+
+
+            <p>
+
+                Explore the halal status of food ingredients
+                and products with clear, accessible information.
+
+            </p>
+
+
+            <div class="card-footer">
+
+                <a
+                    class="button primary"
+                    href="halal-privacy.html"
+                >
+                    Privacy Policy
+                </a>
+
+
+                <a
+                    class="button"
+                    href="halal-terms.html"
+                >
+                    Terms of Service
+                </a>
+
+
+                <a
+                    class="button"
+                    href="mailto:yesilyurtselim34@gmail.com"
+                >
+                    Support
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
 
 </div>
 
-</details>
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+<div class="container">
+
+    <div class="about-box">
+
+        <h2>
+            About the developer
+        </h2>
+
+
+        <p>
+
+            I'm Selim Yeşilyurt, an independent developer
+            focused on creating useful mobile applications
+            with a clean, straightforward user experience.
+
+        </p>
+
+    </div>
 
 </div>
 
+</section>
 
-<!-- HALAL -->
 
-<div class="card">
+</main>
 
-<h2>☪️ Halal</h2>
 
-<p style="text-align:left;">
-Discover the halal status of food ingredients and products.
-</p>
 
-<details>
-
-<summary>Open Support</summary>
-
-<div class="links">
-
-<a href="halal-privacy.html">🔒 Privacy Policy</a>
-
-<a href="halal-terms.html">📄 Terms of Service</a>
-
-<a href="mailto:yesilyurtselim34@gmail.com">📧 Contact Support</a>
-
-</div>
-
-</details>
-
-</div>
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-© 2026 Selim Yeşilyurt
+<div class="container footer-inner">
+
+
+    <div>
+        © 2026 Selim Yeşilyurt. All rights reserved.
+    </div>
+
+
+    <div class="footer-links">
+
+        <a
+            href="mailto:yesilyurtselim34@gmail.com"
+        >
+            Contact
+        </a>
+
+    </div>
+
+
+</div>
 
 </footer>
+
 
 </body>
 </html>
